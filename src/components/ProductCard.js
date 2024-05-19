@@ -52,18 +52,15 @@ const ProductCard = ({ grid, product, products }) => {
       >
         <div
           className="productCard"
-          style={{ pointerEvents: product.isExpired ? "none" : "auto" }}
+     
         >
           {product.isBest && <h3 className="best">Best Sellers</h3>}
           <div className="product-img">
-            {product.isExpiredj ? (
-              <img className="img-fluid" src="/images/ex.jpg" alt="expired" />
-            ) : (
+           
               product?.image &&
               product.image[0] && (
                 <img src={product.image[0].img} alt={product.name} />
-              )
-            )}
+            
 
             <div className="action-bar">
               <div className="d-flex action-icon-cont">
@@ -96,7 +93,9 @@ const ProductCard = ({ grid, product, products }) => {
               <FaHeart className={isLiked ? "heart" : ""} />
             </div>
             <h3 className="brand">{product?.brand}</h3>
-            <h3 className="product-title">{product?.name}</h3>
+            <Link to={`/productDetail/${product?._id}`} style={{cursor:"pointer"}}>
+              <h3 className="product-title">{product?.name}</h3>
+            </Link>
             <div className="d-flex align-items-center ">
               <ReactStars
                 count={5}
