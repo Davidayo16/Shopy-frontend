@@ -57,9 +57,9 @@ const ProductCard = ({ grid, product, products }) => {
           {product.isBest && <h3 className="best">Best Sellers</h3>}
           <div className="product-img">
            
-              product?.image &&
-              product.image[0] && (
-                <img src={product.image[0].img} alt={product.name} />
+             { product?.image &&
+              product.image[0] && 
+                <img src={product.image[0].img} alt={product.name} />}
             
 
             <div className="action-bar">
